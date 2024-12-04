@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+
+        body {
+            background-color: #204ad1fe; /* Pretty blue color */
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+     
+       
+    </style>
+</head>
+
+
+
+<head>
+    <title>Upload and Analyze File</title>
+</head>
+<body>
+    <h1>Upload Excel File for Analysis</h1>
+    
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="fileUpload">Upload Excel File (.xlsx, .xls)</label>
+        <input type="file" id="fileUpload" name="file" accept=".xls,.xlsx" required>
+        <button type="submit">Upload File</button>
+    </form>
+  
+</body>
+</html>
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %} -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+
+        body {
+            background-color: #204ad1fe; /* Pretty blue color */
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+     
+       
+    </style>
+</head>
+
+
+
+<head>
+    <title>No Results to Display</title>
+</head>
+
+<body>
+    
+    
+
+    <body>
+        <div class="container">
+            <h1>It Seems Something Went Wrong</h1>
+            <h3> Be sure you correctly typed the column name with the unique identifier</h3>
+            <h3> Be sure your file has data (especially in the dates you entered)</h3>
+            <h3>                        </h3>
+
+            <h3> Ensure you upload an Excel file (has the .xlsx or .xls)</h3>
+            <h3> Be sure your file has the dates in which you would like to analyze</h3>
+            <h3> Your file must have a column with a unique identifier. You will be prompted to enter it.</h3>  
+            <h3> Be sure your file has dates with months, days, and years</h3>
+            <h3> Be sure your file has columns with the EXACT spelling of: </h3>
+            <h5> "Seller Name" </h5>
+            <h5> "Selling Stage" </h5>
+            <h5> "Recurring ACV (USD)" </h5>
+            <h5> "Created Date" </h5>
+            <h5> "Date Closed" </h5>
+
+
+            <form action="/index" method="POST">
+                <button class="continue-button" >Continue</button>
+                
+            </form>
+    
+    
+            
+     </div>
+        
+    
+    </body>
+  
+</body>
+
+</html>

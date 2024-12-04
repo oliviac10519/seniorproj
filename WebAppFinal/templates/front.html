@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+       /* Styling */
+        body {
+            background-color: #204ad1fe; /* Pretty blue color */
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+     
+        .start-button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            background-color: white;
+            color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+       
+        .start-button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DataDriver</h1>
+        <h2> Your data analytics solution</h2> 
+
+        <form action="/result" method="POST">
+            <button class="start-button" >Begin Analyzing Now</button>
+        </form>
+
+
+        <!-- <a href="destination.html" target="_blank">
+            <button class="start-button" >Begin Analyzing Now</button>
+        </a> -->
+        <!-- <button class="start-button" onclick="start()">Begin Analyzing Now</button> -->
+    </div>
+    
+
+</body>
+</html>

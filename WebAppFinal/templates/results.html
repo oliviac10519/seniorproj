@@ -1,0 +1,188 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flash-messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+        body {
+            background-color: #204ad1fe; /* Pretty blue color */
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .flash-messages {
+            background-color: #f44336;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            list-style-type: none;
+            border-radius: 5px;
+        }
+        .chart-container img {
+            width: 80%;  /* Adjust to fit the page */
+            max-width: 500px;  /* Limit max size */
+        }
+        .pivot-table {
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .flash-messages li {
+            margin: 5px 0;
+        }
+
+
+        .section {
+            margin-top: 40px;
+        }
+
+        .section div {
+            background-color: #333;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .chart-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Closed Won Opportunities Summary</h1>
+<h2>Total Recurring ACV for Closed Won Opportunities: ${{ sum_won1 }}</h2>
+
+<h1>Closed Won by Selling Team</h1>
+<div>{{ results | safe }}</div>
+
+{% if results_secondary %}
+<h1>Closed Won by Seller</h1>
+<div>{{ results_secondary | safe }}</div>
+{% endif %}
+
+<h1>Charts</h1>
+<div class="chart-container">
+    {% for chart in charts %}
+    <img src="{{ url_for('serve_chart', filename=chart) }}" alt="Chart">
+    {% endfor %}
+</div>
+</body>
+
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body{
+            background-color: #204ad1fe;
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <h2>Total Recurring ACV for Closed Won Opportunities: ${{ sum_won1 }}</h2>
+    <h1>Results </h1>
+    <div>{{ results1 | safe }}</div>
+
+    {% if results2 %}
+        <h1>Closed Won Results (Timeframe 2)</h1>
+        <div>{{ results2 | safe }}</div>
+    {% endif %}
+
+    <!-- {% if charts %}
+        <div class="chart-container">
+            <h1>Charts</h1>
+            {% for chart in charts %}
+                <img src="{{ url_for('serve_chart', filename=chart) }}" alt="Chart">
+            {% endfor %}
+        </div>
+    {% endif %}   -->
+    {% for chart in charts %}
+        <img src="{{ url_for('static', filename='charts/' + chart) }}" alt="Chart">
+    {% endfor %} 
+
+    <!-- {% for chart in charts %}
+    <img src="{{ url_for('static', filename='charts/' + chart) }}" alt="Chart">
+    {% endfor %} -->
+
+    <section class="section">
+        {% if results %}
+            <h2>Pivot Table 1</h2>
+            <div>{{ results | safe }}</div>
+        {% endif %}
+
+        {% if results_secondary %}
+            <h2>Pivot Table 2</h2>
+            <div>{{ results_secondary | safe }}</div>
+        {% endif %}
+
+        <!-- {% if download_file %}
+            <a href="{{url_for('download_excel', filename=download_file)}}" class="btn btn-primary">Download Excel FIle</a>
+        {% endif% } -->
+    </section>
+
+</body>
+</html>

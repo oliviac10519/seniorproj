@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
+    <style>
+
+        body {
+            background-color: #204ad1fe; /* Pretty blue color */
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+     
+       
+    </style>
+</head>
+
+
+
+<head>
+    <title>Enter Analysis Parameters</title>
+</head>
+
+<body>
+    <h1>Enter Inputs for Analysis</h1>
+    <form action="{{ url_for('analyze1', filename=filename) }}" method="post">
+        <label for="oppID">What is the Column Name that Contains the Unique Opportunity Identifier:</label>
+        <input type="text" name="oppID" id="oppID" required> 
+
+        <label for="win_stage">Stage Indicating Opportunity Won:</label>
+        <input type="number" name="win_stage" id="win_stage" required>
+
+        <label for="lose_stage">Stage Indicating Opportunity Lost:</label>
+        <input type="number" name="lose_stage" id="lose_stage" required>
+
+        <label for="timeframe1_1">Timeframe1 Start Date:</label>
+        <input type="date" name="timeframe1_1" id="timeframe1_1" required>
+
+        <label for="timeframe1_2">Timeframe1 End Date:</label>
+        <input type="date" name="timeframe1_2" id="timeframe1_2" required>
+
+
+        <input type="submit" value="Analyze">
+    </form>   
+</body>
+</html>
