@@ -161,8 +161,10 @@
         </div>
     {% endif %}   -->
     {% for chart in charts %}
-        <img src="{{ url_for('static', filename='charts/' + chart) }}" alt="Chart">
-    {% endfor %} 
+        <img src="{{ url_for('static', filename='charts/' + chart) }}?v={{ loop.index }}" alt="Chart">
+    {% endfor %}
+
+ 
 
     <!-- {% for chart in charts %}
     <img src="{{ url_for('static', filename='charts/' + chart) }}" alt="Chart">
