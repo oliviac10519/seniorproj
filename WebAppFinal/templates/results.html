@@ -179,9 +179,10 @@
             <div>{{ results_secondary | safe }}</div>
         {% endif %}
 
-        <!-- {% if download_file %}
-            <a href="{{url_for('download_excel', filename=download_file)}}" class="btn btn-primary">Download Excel FIle</a>
-        {% endif% } -->
+        {% if download_excel %}
+            <a href="{{ url_for('download_excel', filename=download_excel) }}" class="btn btn-primary">Download Excel File</a>
+        {% endif %}
+        
     </section>
 
 </body>
